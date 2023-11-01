@@ -1,16 +1,16 @@
 import pandas as pd
 import os
 
-diretorio = "C:\\Users\\Lucas\\Desktop\\Script_Balao\\"
+diretorio = "Dia 3 - 30 10\\"
 
 arquivos_csv = []
 nomes = []
 
 todosArquivos = os.listdir(diretorio)
-for arq in todosArquivos:
-    if arq.endswith(".csv"):
-        arquivos_csv.append(os.path.join(diretorio,arq))
-        nomes.append(arq)
+for arq_csv in todosArquivos:
+    if arq_csv.endswith(".csv"):
+        arquivos_csv.append(os.path.join(diretorio,arq_csv))
+        nomes.append(arq_csv)
 i=0
 
 for arquivo in arquivos_csv:
@@ -27,8 +27,8 @@ for arquivo in arquivos_csv:
     df[titles[4]] = df.iloc[:,8].astype(str) + "." + df.iloc[:,9].astype(str)
 
     newDf = df[titles]
-    newDf_path = f"C:\\Users\\Lucas\\Desktop\\Script_Balao\\Modificados\\Dia 3\\"
-    newDf.to_csv(f"{newDf_path}{nomes[i]}aaaaaaaaa.csv",index=False)
+    newDf_path = f"Modificados\\Dia 3\\"
+    newDf.to_csv(f"{newDf_path}Modified_{nomes[i]}.csv",index=False) #, header=False)
     i+=1
             
 
