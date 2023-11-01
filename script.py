@@ -20,15 +20,15 @@ for arquivo in arquivos_csv:
 
     titles = ["Times","SoundPressure1","OffsetPressure1","SoundPressure2","OffsetPressure2"]
 
-    df[titles[0]] = df.iloc[:,0].astype(str) + "." + df.iloc[:,1].astype(str)
-    df[titles[1]] = df.iloc[:,2].astype(str) + "." + df.iloc[:,3].astype(str)
-    df[titles[2]] = df.iloc[:,4].astype(str) + "." + df.iloc[:,5].astype(str)
-    df[titles[3]] = df.iloc[:,6].astype(str) + "." + df.iloc[:,7].astype(str)
-    df[titles[4]] = df.iloc[:,8].astype(str) + "." + df.iloc[:,9].astype(str)
+    df[titles[0]] = df.iloc[:,0].astype(int).astype(str) + "." + df.iloc[:,1].astype(int).astype(str).str.zfill(4)
+    df[titles[1]] = df.iloc[:,2].astype(int).astype(str) + "." + df.iloc[:,3].astype(int).astype(str).str.zfill(3)
+    df[titles[2]] = df.iloc[:,4].astype(int).astype(str) + "." + df.iloc[:,5].astype(int).astype(str).str.zfill(3)
+    df[titles[3]] = df.iloc[:,6].astype(int).astype(str) + "." + df.iloc[:,7].astype(int).astype(str).str.zfill(3)
+    df[titles[4]] = df.iloc[:,8].astype(int).astype(str) + "." + df.iloc[:,9].astype(int).astype(str).str.zfill(3)
 
     newDf = df[titles]
     newDf_path = f"Modificados\\Dia 3\\"
-    newDf.to_csv(f"{newDf_path}Modified_{nomes[i]}.csv",index=False) #, header=False)
+    newDf.to_csv(f"{newDf_path}Modified_{nomes[i]}",index=False) #, header=False)
     i+=1
             
 
