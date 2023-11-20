@@ -18,7 +18,7 @@ for arquivo in arquivos_csv:
     df = pd.read_csv(arquivos_csv[0],sep=",",skiprows=1)
 
 
-    titles = ["Time","SoundPressure1","OffsetPressure1","SoundPressure2","OffsetPressure2"]
+    titles = ["Times","SoundPressure1","OffsetPressure1","SoundPressure2","OffsetPressure2"]
 
     df[titles[0]] = df.iloc[:,0].astype(int).astype(str) + "." + df.iloc[:,1].astype(int).astype(str).str.zfill(4)
     df[titles[1]] = df.iloc[:,2].astype(int).astype(str) + "." + df.iloc[:,3].astype(int).astype(str).str.zfill(3)
