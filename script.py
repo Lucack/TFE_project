@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-diretorio = "Dia 8 - 22 11\\Rosa\\"
+diretorio = "Dia 8 - 22 11\\Preto\\"
 
 arquivos_csv = []
 nomes = []
@@ -15,7 +15,7 @@ i=0
 
 for arquivo in arquivos_csv:
             
-    df = pd.read_csv(arquivos_csv[0],sep=",",skiprows=1)
+    df = pd.read_csv(arquivos_csv[i],sep=",",skiprows=1)
 
 
     titles = ["Times","SoundPressure1","OffsetPressure1","SoundPressure2","OffsetPressure2"]
@@ -27,7 +27,7 @@ for arquivo in arquivos_csv:
     df[titles[4]] = df.iloc[:,8].astype(int).astype(str) + "." + df.iloc[:,9].astype(int).astype(str).str.zfill(3)
 
     newDf = df[titles]
-    newDf_path = f"Modificados\\Dia 8\\Rosa\\"
+    newDf_path = f"Modificados\\Dia 8\\Preto\\"
     newDf.to_csv(f"{newDf_path}Modified_{nomes[i]}",index=False) #, header=False)
     i+=1
             
